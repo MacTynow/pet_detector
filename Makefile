@@ -17,8 +17,8 @@ copy:
 .PHONY: focus
 focus:
 	@echo "Taking camera photo for focus"
-	@ssh $(RASPBERRY_PI_USERNAME)@$(RASPBERRY_PI_IP) raspistill -o /home/pi/pet_detector/focus.jpg
-	@scp $(RASPBERRY_PI_USERNAME)@$(RASPBERRY_PI_IP):/home/pi/pet_detector/focus.jpg ./focus.jpg
+	@ssh $(RASPBERRY_PI_USERNAME)@$(RASPBERRY_PI_IP) libcamera-still -o /tmp/focus.jpg
+	@scp $(RASPBERRY_PI_USERNAME)@$(RASPBERRY_PI_IP):/tmp/focus.jpg ./focus.jpg
 
 .PHONY: shell
 shell:
